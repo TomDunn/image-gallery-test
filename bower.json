@@ -13,6 +13,7 @@
     "tests"
   ],
   "dependencies": {
-    "reset-css": "~2.0.2011012602"
+    "reset-css": "~2.0.2011012602",
+    "skeleton": "~2.0.4"
   }
 }
