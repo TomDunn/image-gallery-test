@@ -11,51 +11,29 @@
         I don't know but tastes pretty nice. I think this is enough text to fill up a few lines. Nope not quite, I'll just keep
         rambling on here for a little longer. Foo, foo, bar, foo foo bar.</p>
 
-        <div class="row vertically-spaced-row">
-            <div class="three columns">
-                <div class="responsive-img-container">
-                    <img src="http://placekitten.com/250/200" alt="cat pic">
-                </div>
-            </div>
-            <div class="three columns">
-                <div class="responsive-img-container">
-                    <img src="http://placekitten.com/250/200" alt="cat pic">
-                </div>
-            </div>
-            <div class="three columns">
-                sdfasdf a asdf sdf sa dfasdf asd f asdf  asdf sadf asd f sadf
-            </div>
-            <div class="three columns">
-                <div class="responsive-img-container">
-                    <img src="http://placekitten.com/250/200" alt="cat pic">
-                </div>
-            </div>
-        </div>
+        {% for image in images %}
 
-        <div class="row vertically-spaced-row">
-            <div class="three columns">
-                <div class="responsive-img-container">
-                    <img src="http://placekitten.com/250/200" alt="cat pic">
+            {% if (loop.index - 1) % 4 === 0 %}
+                <div class="row vertically-spaced-row">
+            {% endif %}
+
+                <div class="three columns">
+                    <div class="responsive-img-container">
+                        <img src="{{image}}" alt="cat pic">
+                        <div class="img-overlay">
+                            <label>
+                                <input type="checkbox">
+                            </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="three columns">
-                <div class="responsive-img-container">
-                    <img src="http://placekitten.com/250/200" alt="cat pic">
+
+            {% if (loop.index - 1) % 4 === 3 %}
                 </div>
-            </div>
-            <div class="three columns">
-                <div class="responsive-img-container">
-                    <img src="http://placekitten.com/250/200" alt="cat pic">
-                </div>
-            </div>
-            <div class="three columns">
-                <div class="responsive-img-container">
-                    <img src="http://placekitten.com/250/200" alt="cat pic">
-                </div>
-            </div>
-        </div>
+            {% endif %}
+        {% endfor %}
+
     </div>
-
     <script type="text/javascript" src="/public/homepage.js"></script>
 </body>
 </html>
